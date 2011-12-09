@@ -1,11 +1,11 @@
-# revision 23795
+# revision 24716
 # category Package
 # catalog-ctan /macros/latex/contrib/texshade
-# catalog-date 2011-06-02 21:02:40 +0200
+# catalog-date 2011-12-01 13:24:33 +0100
 # catalog-license gpl2
-# catalog-version 1.23
+# catalog-version 1.24
 Name:		texlive-texshade
-Version:	1.23
+Version:	1.24
 Release:	1
 Summary:	Package for setting nucleotide and peptide alignments
 Group:		Publishing
@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 TeXshade is alignment shading software completely written in
@@ -35,19 +32,19 @@ output quality -- all in a bundle that does not demand
 excessive development time of the user.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------

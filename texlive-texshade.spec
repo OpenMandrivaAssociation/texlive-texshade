@@ -31,16 +31,8 @@ shading modes. TeXshade combines highest flexibility with TeX
 output quality -- all in a bundle that does not demand
 excessive development time of the user.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -68,7 +60,6 @@ excessive development time of the user.
 #- source
 %doc %{_texmfdistdir}/source/latex/texshade/texshade.dtx
 %doc %{_texmfdistdir}/source/latex/texshade/texshade.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -79,5 +70,3 @@ excessive development time of the user.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

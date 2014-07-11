@@ -6,7 +6,7 @@
 # catalog-version 1.24
 Name:		texlive-texshade
 Version:	1.24
-Release:	7
+Release:	8
 Summary:	Package for setting nucleotide and peptide alignments
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/texshade

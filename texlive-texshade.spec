@@ -1,19 +1,13 @@
-# revision 24716
-# category Package
-# catalog-ctan /macros/latex/contrib/texshade
-# catalog-date 2011-12-01 13:24:33 +0100
-# catalog-license gpl2
-# catalog-version 1.24
 Name:		texlive-texshade
-Version:	1.25
-Release:	2
+Version:	64242
+Release:	1
 Summary:	Package for setting nucleotide and peptide alignments
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/texshade
 License:	GPL2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -32,38 +26,24 @@ output quality -- all in a bundle that does not demand
 excessive development time of the user.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/texshade/texshade.def
-%{_texmfdistdir}/tex/latex/texshade/texshade.sty
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP1.phd
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP1.top
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP2spec.ALN
-%doc %{_texmfdistdir}/doc/latex/texshade/AQPDNA.MSF
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP_HMM.ext
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP_HMM.sgl
-%doc %{_texmfdistdir}/doc/latex/texshade/AQP_TC.asc
-%doc %{_texmfdistdir}/doc/latex/texshade/AQPpro.MSF
-%doc %{_texmfdistdir}/doc/latex/texshade/README
-%doc %{_texmfdistdir}/doc/latex/texshade/ciliate.cod
-%doc %{_texmfdistdir}/doc/latex/texshade/standard.cod
-%doc %{_texmfdistdir}/doc/latex/texshade/texshade.pdf
-%doc %{_texmfdistdir}/doc/latex/texshade/tsfaq.pdf
-%doc %{_texmfdistdir}/doc/latex/texshade/tsfaq.tex
+%{_texmfdistdir}/tex/latex/texshade
+%doc %{_texmfdistdir}/doc/latex/texshade
 #- source
-%doc %{_texmfdistdir}/source/latex/texshade/texshade.dtx
-%doc %{_texmfdistdir}/source/latex/texshade/texshade.ins
+%doc %{_texmfdistdir}/source/latex/texshade
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 

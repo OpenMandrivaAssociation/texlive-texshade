@@ -1,6 +1,6 @@
 Name:		texlive-texshade
-Version:	64242
-Release:	2
+Version:	67295
+Release:	1
 Summary:	Package for setting nucleotide and peptide alignments
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/texshade

@@ -3,7 +3,7 @@ Version:	69371
 Release:	1
 Summary:	Package for setting nucleotide and peptide alignments
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/texshade
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/texshade
 License:	GPL2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texshade.doc.r%{version}.tar.xz
